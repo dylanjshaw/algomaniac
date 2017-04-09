@@ -1,0 +1,12 @@
+<p>Show Page</p>
+
+<ul>
+  <li><%= @note.content %></li>
+  <li><%= @note.created_at %></li>
+  <li><%= @note.updated_at %></li>
+  <li>
+    <%= link_to "Edit", edit_note_path(@note) %>
+  <li>
+    <%= link_to 'Destroy',  @note,  method: :delete, data: { confirm: 'Are you sure?' } %>
+  </li>
+</ul>

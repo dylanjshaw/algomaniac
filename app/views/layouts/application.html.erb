@@ -3,7 +3,7 @@
   <head>
     <title>Notify</title>
     <%= csrf_meta_tags %>
-
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -21,7 +21,10 @@
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>
       <li>
-        <%= link_to "Edit Account", edit_user_registration_path %>
+        <%= link_to "Account Settings", edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "New Note", new_note_path %>
       </li>
       <% else %>
       <li>
