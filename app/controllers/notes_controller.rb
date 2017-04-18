@@ -10,9 +10,10 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = current_user.notes.new(note_params)
+    @note = Note.new(note_params)
+    @note.user = current_user
+    puts 'inside the create method'
     if @note.save
-      # flash[:success] = "Note Saved!"
       respond_to do |format|
         format.html { redirect_to @note }
         format.json { render json: @note }

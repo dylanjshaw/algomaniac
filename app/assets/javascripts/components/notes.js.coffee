@@ -4,9 +4,11 @@
   getDefaultProps: ->
     notes: []
   addNote: (note) ->
+    # console.log('adding the note')
     notes = @state.notes.slice()
     notes.unshift(note)
     @setState(notes: notes)
+    # console.log('added the note')
   render: ->
     React.DOM.div
       className: 'notes test'
@@ -22,3 +24,4 @@
         React.DOM.tbody null
           for note in @state.notes
             React.createElement Note, key: note.id, note: note
+            # React.createElement Delete
