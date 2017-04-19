@@ -1,5 +1,45 @@
 @import "bootstrap";
 
+nav {
+  background-color: black;
+}
+nav ul li {
+  list-style-type:none;
+  display: inline-block;
+  padding: 0px;
+}
+
+nav ul li:hover {
+  background-color: #222222;
+}
+
+nav ul li a {
+  color: lightgray;
+  padding: 5px 30px;
+  display:block;
+  line-height: 35px;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: lightgray;
+}
+
+.greeting {
+  color: white;
+}
+
+.greeting:hover {
+  background-color:black;
+}
+
+.list-header {
+  a {
+    font-size: 1.3em;
+  }
+}
+
+//--------------------------------------------------------
 .test {
   border: 1px solid red;
 }
