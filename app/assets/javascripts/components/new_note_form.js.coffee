@@ -14,19 +14,19 @@
     , 'JSON'
   render: ->
     React.DOM.form
-      className: 'form-inline'
+      className: 'container center-div bottom-buffer'
       onSubmit: @handleSubmit
       React.DOM.div
         className: 'form-group'
         React.DOM.input
           type: 'text'
-          className: 'form-control'
-          placeholder: 'Write your note here...'
+          className: 'form-control content-input tall-input'
           name: 'content'
           value: @state.data
+          autoComplete: "off"
           onChange: @handleValueChange
         React.DOM.button
           type: 'submit'
-          className: 'btn btn-primary'
+          className: 'btn btn-primary place-right btn-buffer'
           disabled: !@valid()
-          'Create Note'
+          'Store Algorithm'

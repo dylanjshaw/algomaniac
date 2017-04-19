@@ -30,11 +30,11 @@
         React.DOM.td null, @props.note.content
         React.DOM.td null,
           React.DOM.button
-            className: 'btn btn-primary'
+            className: 'btn btn-primary btn-buffer'
             onClick: @handleToggle
             'Edit'
           React.DOM.button
-            className: 'btn btn-danger'
+            className: 'btn btn-danger btn-buffer'
             onClick: @handleDelete
             'delete'
   noteForm: ->
@@ -44,14 +44,15 @@
             className: 'form-control'
             type: 'text'
             defaultValue: @props.note.content
+            autoComplete: "off"
             ref: 'content'
         React.DOM.td null,
           React.DOM.button
-            className: 'btn btn-primary'
+            className: 'btn btn-primary btn-buffer'
             onClick: @handleEdit
             'Update'
           React.DOM.button
-            className: 'btn btn-danger'
+            className: 'btn btn-danger btn-buffer'
             onClick: @handleToggle
             'Cancel'
   render: ->

@@ -20,17 +20,21 @@
     @replaceState notes: notes
   render: ->
     React.DOM.div
-      className: 'notes test'
-      React.DOM.h2
-        className: 'title test'
-        'Notes'
+      className: 'notes'
+      React.DOM.h4
+        className: 'title container center-div'
+        'Enter Your Algorithm Here...'
       React.createElement NewNoteForm, handleNewNote: @addNote
+      React.DOM.h2
+        className: 'title center-text'
+        'Algorithms'
       React.DOM.table
-        className: 'table table-bordered test'
+        className: 'table table-bordered bottom-buffer'
         React.DOM.thead null
-          # React.DOM.tr null
               React.DOM.th null, 'Content'
-              React.DOM.th null, 'Actions'
+              React.DOM.th
+                className: 'actions-column'
+                'Actions'
             React.DOM.tbody null
             for note in @state.notes
               React.createElement Note, key: note.id, note: note, handleDeleteNote: @deleteNote, handleEditNote: @updateNote
