@@ -8,12 +8,10 @@
     @state.content
   handleSubmit: (e) ->
     e.preventDefault()
-    # console.log('submitting the note')
     $.post 'notes', {note: @state }, (data) =>
+      @setState.content = @getInitialState()
       @props.handleNewNote(data)
-      @setState content: ''
     , 'JSON'
-    # console.log('submitted the note')
   render: ->
     React.DOM.form
       className: 'form-inline'

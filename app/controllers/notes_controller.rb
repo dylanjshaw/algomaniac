@@ -34,24 +34,23 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id])
     if @note.update_attributes(note_params)
-      # flash[:success] = "Note updated successfully!"
-      # redirect_to @ (connect) note
       render json: @note
     else
-      # render "edit"
       render json: @note.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
     @note = Note.find(params[:id])
-    if @note
-      @note.destroy
-      # flash[:success] = "Note destroyed!"
-      redirect_to notes_path
-    else
-      status 404
-    end
+    @note.destroy
+    head :no_content
+    # if @note
+    #   @note.destroy
+    #   # flash[:success] = "Note destroyed!"
+    #   redirect_to notes_path
+    # else
+    #   status 404
+    # end
   end
 
   private
